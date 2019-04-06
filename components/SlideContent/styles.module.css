@@ -1,0 +1,20 @@
+.SlideContent {
+  padding: 20px 40px;
+  background-color:#64b6ac;
+  height:100%;
+  display:flex;
+  flex-direction: column;
+}
+
+.SlideContent h1 {
+  margin-bottom: 200px;
+  text-align: center; 
+  font-size: 32px
+}
+
+.SlideBody {
+  min-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}

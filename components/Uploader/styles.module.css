@@ -1,0 +1,9 @@
+.Uploader {
+  width: 300px;
+  height: 80px;
+  border: 4px dashed #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
