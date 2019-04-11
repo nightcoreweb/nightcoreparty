@@ -13,7 +13,7 @@ export default function Uploader() {
     fetch(" http://localhost:5000/upload", {
       method: "POST",
       body:formData
-    }).catch(err=>console.log('error?',error))
+    }).catch(error => console.log('error?',error))
     // Do something with the files
   }, [])
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
