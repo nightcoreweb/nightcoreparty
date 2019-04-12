@@ -4,8 +4,7 @@ import fetch from 'isomorphic-unfetch'
 import styles from './styles.module.css';
 
 
-export default function Uploader() {
-  
+export default function Uploader({ onUploadedFile }) {
   const onDrop = useCallback(acceptedFiles => {
     const formData = new FormData();
     console.log('accepted file ?', typeof acceptedFiles[0]);
@@ -13,8 +12,10 @@ export default function Uploader() {
     fetch(" http://localhost:5000/upload", {
       method: "POST",
       body:formData
-    }).catch(error => console.log('error?',error))
-    // Do something with the files
+    })
+      .catch(error=>console.log('error?',error))
+      .then(response => response.json())
+      .then(fileUrl => onUploadedFile(fileUrl))
   }, [])
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
